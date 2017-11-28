@@ -1,0 +1,13 @@
+SilverTip.Services\bin\*
+SilverTip.InterfaceServices\bin\*
+SilverTip.Common\bin\*
+SilverTip.BusinessObjects\bin\*
+SilverTip.API\bin\*
+SilverTip.Services\obj\*
+SilverTip.InterfaceServices\obj\*
+SilverTip.Common\obj\*
+SilverTip.BusinessObjects\obj\*
+SilverTip.API\obj\*
+SilverTip.API\Web.Debug.config
+SilverTip.API\Web.Release.config
+*.user

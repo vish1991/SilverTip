@@ -1,0 +1,12 @@
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\SilverTip.BusinessObjects.dll.config
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\SilverTip.BusinessObjects.dll
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\SilverTip.BusinessObjects.pdb
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\EntityFramework.dll
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\EntityFramework.SqlServer.dll
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\SilverTip.BusinessEntities.dll
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\SilverTip.BusinessEntities.pdb
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\EntityFramework.xml
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\bin\Debug\EntityFramework.SqlServer.xml
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.csprojResolveAssemblyReference.cache
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.dll
+D:\SilverTip\SourceCode\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.pdb

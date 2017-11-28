@@ -1,0 +1,4 @@
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.dll
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.pdb
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.dll
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.pdb

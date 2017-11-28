@@ -1,0 +1,5 @@
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\SilverTip.Services.dll
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\SilverTip.Services.pdb
+D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.csprojResolveAssemblyReference.cache
+D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.dll
+D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.pdb
