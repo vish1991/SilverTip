@@ -19,7 +19,7 @@ namespace SilverTip.BusinessObjects
         }
         public SilverTipEntities DbContext
         {
-            get { return _dbContext ?? (_dbContext = DbFactory.Init()); }
+            get { return _dbContext ??    (_dbContext = DbFactory.Init()); }
         }
         public RepositoryBase(IDbFactory dbFactory)
         {

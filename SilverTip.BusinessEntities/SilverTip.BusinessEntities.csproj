@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{42E1D045-5B7E-4E78-BA8F-B697348443D5}</ProjectGuid>
+    <ProjectGuid>{18211C7D-F18D-4345-A076-04D2DB072F25}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>SilverTip.BusinessObjects</RootNamespace>
-    <AssemblyName>SilverTip.BusinessObjects</AssemblyName>
+    <RootNamespace>SilverTip.BusinessEntities</RootNamespace>
+    <AssemblyName>SilverTip.BusinessEntities</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,16 +31,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\SilverTip\SourceCode\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\SilverTip\SourceCode\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -49,27 +51,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LeafType.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\Infrastructure\DbFactory.cs" />
-    <Compile Include="Repositories\Infrastructure\Disposable.cs" />
-    <Compile Include="Repositories\Infrastructure\IDbFactory.cs" />
-    <Compile Include="Repositories\Infrastructure\IRepository.cs" />
-    <Compile Include="Repositories\Infrastructure\IUnitOfWork.cs" />
-    <Compile Include="Repositories\Infrastructure\RepositoryBase.cs" />
-    <Compile Include="Repositories\Infrastructure\UnitOfWork.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Interface\" />
+    <Compile Include="Route.cs" />
+    <Compile Include="SilverTipEntities.cs" />
+    <Compile Include="Supplier.cs" />
+    <Compile Include="SupplierType.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj">
-      <Project>{18211c7d-f18d-4345-a076-04d2db072f25}</Project>
-      <Name>SilverTip.BusinessEntities</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

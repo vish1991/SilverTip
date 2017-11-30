@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SilverTip.BusinessEntities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,6 +19,13 @@ namespace SilverTip.API
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+
+            using (var ctx = new SilverTipEntities())
+            {
+                ctx.Database.Initialize(false);
+            }
+
+
         }
     }
 }

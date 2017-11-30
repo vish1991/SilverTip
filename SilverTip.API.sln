@@ -5,8 +5,6 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.API", "SilverTip.API\SilverTip.API.csproj", "{1962228C-0C21-48F1-9ADD-20CEC3DFBBC6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.BusinessEntities", "..\..\SourceCode\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj", "{18211C7D-F18D-4345-A076-04D2DB072F25}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.BusinessObjects", "SilverTip.BusinessObjects\SilverTip.BusinessObjects.csproj", "{42E1D045-5B7E-4E78-BA8F-B697348443D5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.Common", "SilverTip.Common\SilverTip.Common.csproj", "{B6089D90-FE56-4B81-BD12-854DC64F001D}"
@@ -14,6 +12,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.InterfaceServices", "SilverTip.InterfaceServices\SilverTip.InterfaceServices.csproj", "{1D744F3D-ECD4-463C-B94F-EB444EBFA47F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.Services", "SilverTip.Services\SilverTip.Services.csproj", "{88E96147-5BBE-41CA-BF71-6FE24214E366}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverTip.BusinessEntities", "SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj", "{18211C7D-F18D-4345-A076-04D2DB072F25}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,10 +25,6 @@ Global
 		{1962228C-0C21-48F1-9ADD-20CEC3DFBBC6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1962228C-0C21-48F1-9ADD-20CEC3DFBBC6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1962228C-0C21-48F1-9ADD-20CEC3DFBBC6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{18211C7D-F18D-4345-A076-04D2DB072F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{18211C7D-F18D-4345-A076-04D2DB072F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{18211C7D-F18D-4345-A076-04D2DB072F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{18211C7D-F18D-4345-A076-04D2DB072F25}.Release|Any CPU.Build.0 = Release|Any CPU
 		{42E1D045-5B7E-4E78-BA8F-B697348443D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{42E1D045-5B7E-4E78-BA8F-B697348443D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42E1D045-5B7E-4E78-BA8F-B697348443D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,6 +41,10 @@ Global
 		{88E96147-5BBE-41CA-BF71-6FE24214E366}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{88E96147-5BBE-41CA-BF71-6FE24214E366}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{88E96147-5BBE-41CA-BF71-6FE24214E366}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18211C7D-F18D-4345-A076-04D2DB072F25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18211C7D-F18D-4345-A076-04D2DB072F25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18211C7D-F18D-4345-A076-04D2DB072F25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18211C7D-F18D-4345-A076-04D2DB072F25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
