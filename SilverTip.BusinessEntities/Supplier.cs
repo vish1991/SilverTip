@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Boughtleaf.BusinessEntities;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
@@ -10,6 +11,13 @@ namespace SilverTip.BusinessEntities
 {
     public partial class Supplier
     {
+        public Supplier()
+        {
+            SupplierFunds = new HashSet<SupplierFund>();
+            SupplierPaymentTypes = new HashSet<SupplierPaymentType>();
+            SupplierCollections = new HashSet<SupplierCollection>();
+        }
+
         [Key]
         public int Id { get; set; }
         [Required]
@@ -36,14 +44,16 @@ namespace SilverTip.BusinessEntities
         public DateTime CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
-
+        public int BankId { get; set; }
         [ForeignKey("RouteId")]
         public virtual Route Route { get; set; }
-
         [ForeignKey("SupplierTypeId")]
         public virtual SupplierType SupplierType { get; set; }
-
         [ForeignKey("LeafTypeId")]
         public virtual LeafType LeafType { get; set; }
+        public virtual ICollection<Bank> Bank { get; set; }
+        public virtual ICollection<SupplierFund> SupplierFunds { get; set; }
+        public virtual ICollection<SupplierPaymentType> SupplierPaymentTypes { get; set; }
+        public virtual ICollection<SupplierCollection> SupplierCollections { get; set; }
     }
 }

@@ -9,21 +9,31 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class SuppierFunds
+    public class SupplierFund
     {
         [Key]
         public int Id { get; set; }
 
-        public Decimal Amount { get; set; }
+        public int SupplierId { get; set; }
+
+        public int FundId {get; set;}
+
+        public int FundModeId { get; set; }
+
+        public decimal Amount { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime ModifiedDate { get; set; }
 
         [ForeignKey("SupplierId")]
-        public virtual ICollection<Supplier> Suppliers { get; set; }
+        public Supplier Supplier { get; set; }
 
         [ForeignKey("FundId")]
-        public virtual ICollection<Funds> Funds { get; set; }
+        public Fund Fund { get; set; }
 
         [ForeignKey("FundModeId")]
-        public virtual ICollection<FundModes> FundModes { get; set; }
+        public FundMode FundMode { get; set; }
 
     }
 }

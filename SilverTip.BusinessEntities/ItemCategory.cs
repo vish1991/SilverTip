@@ -7,12 +7,21 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class ItemCategories
+    public class ItemCategory
     {
+        public ItemCategory()
+        {
+            Items = new HashSet<Item>();
+        }
         [Key]
         public int Id { get; set; }
-        public String Code { get; set; }
-
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
         public string Name { get; set; }
+        public virtual ICollection<Item> Items { get; set; }
+
     }
 }

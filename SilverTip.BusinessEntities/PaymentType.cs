@@ -7,17 +7,22 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class PaymentTypes
+    public class PaymentType
     {
+        public PaymentType()
+        {
+            SupplierPaymentTypes = new HashSet<SupplierPaymentType>();
+        }
         [Key]
         public int Id { get; set; }
-        public String Name { get; set; }
-
-        [MaxLength(500)]
-        public String Description { get; set; }
-        public Boolean IsActive { get; set; }
-        public String Code { get; set; }
-        public DateTime Date { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
+        public virtual ICollection<SupplierPaymentType> SupplierPaymentTypes { get; set; }
 
     }
 

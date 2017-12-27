@@ -3,3 +3,8 @@ D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\SilverTip.Services.pdb
 D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.csprojResolveAssemblyReference.cache
 D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.dll
 D:\SilverTip\SourceCode\SilverTip.Services\obj\Debug\SilverTip.Services.pdb
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\SilverTip.Services.dll.config
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.dll
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.dll
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.xml
+D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.xml

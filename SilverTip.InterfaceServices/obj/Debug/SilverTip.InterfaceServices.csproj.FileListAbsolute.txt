@@ -2,3 +2,9 @@ D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\SilverTip.Interfac
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.pdb
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.dll
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.pdb
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.dll.config
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.dll
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.dll
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.xml
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.xml
+D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.csprojResolveAssemblyReference.cache

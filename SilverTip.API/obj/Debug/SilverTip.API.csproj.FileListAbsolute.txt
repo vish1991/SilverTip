@@ -88,3 +88,5 @@ D:\SilverTip\SourceCode\SilverTip.API\bin\System.Web.Http.Owin.xml
 D:\SilverTip\SourceCode\SilverTip.API\obj\Debug\SilverTip.API.csprojResolveAssemblyReference.cache
 D:\SilverTip\SourceCode\SilverTip.API\obj\Debug\SilverTip.API.dll
 D:\SilverTip\SourceCode\SilverTip.API\obj\Debug\SilverTip.API.pdb
+D:\SilverTip\SourceCode\SilverTip.API\bin\SilverTip.BusinessEntities.dll
+D:\SilverTip\SourceCode\SilverTip.API\bin\SilverTip.BusinessEntities.pdb

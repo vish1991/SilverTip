@@ -52,24 +52,43 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bank.cs" />
+    <Compile Include="CollectionOfficer.cs" />
+    <Compile Include="CollectionOfficerRoute.cs" />
     <Compile Include="Fund.cs" />
     <Compile Include="FundMode.cs" />
     <Compile Include="Item.cs" />
     <Compile Include="ItemCategory.cs" />
+    <Compile Include="LeafCollection.cs" />
+    <Compile Include="LeafReconciliation.cs" />
     <Compile Include="LeafType.cs" />
+    <Compile Include="Migrations\201712270523105_InitiateDatabase.cs" />
+    <Compile Include="Migrations\201712270523105_InitiateDatabase.Designer.cs">
+      <DependentUpon>201712270523105_InitiateDatabase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaymentType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Route.cs" />
     <Compile Include="SilverTipEntities.cs" />
     <Compile Include="Supplier.cs" />
+    <Compile Include="SupplierCollection.cs" />
     <Compile Include="SupplierFund.cs" />
     <Compile Include="SupplierPaymentType.cs" />
     <Compile Include="SupplierType.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201712270523105_InitiateDatabase.resx">
+      <DependentUpon>201712270523105_InitiateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

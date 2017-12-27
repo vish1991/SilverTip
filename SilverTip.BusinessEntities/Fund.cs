@@ -8,19 +8,33 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class Funds
+    public class Fund
     {
+        public Fund()
+        {
+            SupplierFunds = new HashSet<SupplierFund>();
+        }
         [Key]
         public int Id { get; set; }
-        public String Name { get; set; }
-
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; }
+        public int BankId { get; set; }
         [MaxLength(500)]
-        public String Description { get; set; }
-        public Boolean IsActive { get; set; }
-        public String Code { get; set; }
+        public string Description { get; set; }
+        public bool IsActive { get; set; }  
         public int AccountNumber { get; set; }
-        public String Branch { get; set; }
+        public string Branch { get; set; }
+        public string CreatedBy { get; set; }
+        public DateTime CreatedDate { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime ModifiedDate { get; set; }
         [ForeignKey("BankId")]
-        public Banks Bank { get; set; }
+        public Bank Bank { get; set; }
+
+        public virtual ICollection<SupplierFund> SupplierFunds { get; set; }
     }
 }

@@ -1,22 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class Banks
+    public class Bank
     {
         [Key]
         public int Id { get; set; }
-        public String Name { get; set; }
-
-        [MaxLength(500)]
-        public String Description { get; set; }
-        public Boolean IsActive { get; set; }
-        public String Code { get; set; }
-
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
     }
 }

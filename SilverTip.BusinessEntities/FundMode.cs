@@ -7,12 +7,21 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    public class FundModes
+    public class FundMode
     {
+        public FundMode()
+        {
+            SupplierFunds = new HashSet<SupplierFund>();
+        }
         [Key]
         public int Id { get; set; }
-        public String Code { get; set; }
-        public String Name { get; set; }
-        public Boolean IsActive { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
+        public virtual ICollection<SupplierFund> SupplierFunds { get; set; }
     }
 }

@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 
 namespace Boughtleaf.BusinessEntities
 {
-    class SupplierPaymntTypes
+    public class SupplierPaymentType
     {
         [Key]
         public int Id { get; set; }
-
-        [MaxLength(500)]
-        public String Description { get; set; }
-        public Boolean IsActive { get; set; }
-        public String Code { get; set; }
+        [Required]
+        [MaxLength(100)]
+        public string Code { get; set; }
+        [Required]
+        [MaxLength(200)]
+        public string Name { get; set; }
+        public bool IsActive { get; set; }
+        public int PaymentTypeId { get; set; }
+        public int SupplierId { get; set; }
         [ForeignKey("PaymentTypeId")]
-        public virtual PaymentTypes PayementType { get; set; }
-
-        [ForeignKey("SupplierTypeId")]
+        public virtual PaymentType PayementType { get; set; }
+        [ForeignKey("SupplierId")]
         public virtual Supplier Supplier { get; set; }
-
-
     }
 }
