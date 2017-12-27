@@ -8,3 +8,13 @@ D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.Sq
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.xml
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.xml
 D:\SilverTip\SourceCode\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.csprojResolveAssemblyReference.cache
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.dll.config
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.pdb
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.xml
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.csprojResolveAssemblyReference.cache
+C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.dll
+C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.pdb

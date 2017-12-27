@@ -50,6 +50,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\CollectionOfficerRepository.cs" />
+    <Compile Include="Repositories\CollectionOfficerRouteRepository.cs" />
+    <Compile Include="Repositories\FundModeRepository.cs" />
+    <Compile Include="Repositories\FundRepository.cs" />
     <Compile Include="Repositories\Infrastructure\DbFactory.cs" />
     <Compile Include="Repositories\Infrastructure\Disposable.cs" />
     <Compile Include="Repositories\Infrastructure\IDbFactory.cs" />
@@ -57,10 +61,36 @@
     <Compile Include="Repositories\Infrastructure\IUnitOfWork.cs" />
     <Compile Include="Repositories\Infrastructure\RepositoryBase.cs" />
     <Compile Include="Repositories\Infrastructure\UnitOfWork.cs" />
+    <Compile Include="Repositories\Interface\ICollectionOfficerRoutesRepository.cs" />
+    <Compile Include="Repositories\Interface\ICollectionOfficersRepository.cs" />
+    <Compile Include="Repositories\Interface\IFundModesRepository.cs" />
+    <Compile Include="Repositories\Interface\IFundsRepository.cs" />
+    <Compile Include="Repositories\Interface\IItemCategoriesRepository.cs" />
+    <Compile Include="Repositories\Interface\IItemsRepository.cs" />
+    <Compile Include="Repositories\Interface\ILeafCollectionsRepository.cs" />
+    <Compile Include="Repositories\Interface\ILeafReconciliationsRepository.cs" />
+    <Compile Include="Repositories\Interface\ILeafTypesRepository.cs" />
+    <Compile Include="Repositories\Interface\IPaymentTypesRepository.cs" />
+    <Compile Include="Repositories\Interface\IRoutesRepository.cs" />
+    <Compile Include="Repositories\Interface\ISupplierCollectionsRepository.cs" />
+    <Compile Include="Repositories\Interface\ISupplierFundRepository.cs" />
+    <Compile Include="Repositories\Interface\ISupplierPaymentTypesRepository.cs" />
+    <Compile Include="Repositories\Interface\ISuppliersRepository.cs" />
+    <Compile Include="Repositories\Interface\ISupplierTypesRepository.cs" />
+    <Compile Include="Repositories\ItemCategoryRepository.cs" />
+    <Compile Include="Repositories\ItemRepository.cs" />
+    <Compile Include="Repositories\LeafCollectionRepository.cs" />
+    <Compile Include="Repositories\LeafReconciliationRepository.cs" />
+    <Compile Include="Repositories\LeafTypeRepository.cs" />
+    <Compile Include="Repositories\PaymentTypeRepository.cs" />
+    <Compile Include="Repositories\RouteRepository.cs" />
+    <Compile Include="Repositories\SupplierCollectionRepository.cs" />
+    <Compile Include="Repositories\SupplierFundRepository.cs" />
+    <Compile Include="Repositories\SupplierPaymentTypeRepository.cs" />
+    <Compile Include="Repositories\SupplierRepository.cs" />
+    <Compile Include="Repositories\SupplierTypeRepository.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Repositories\Interface\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

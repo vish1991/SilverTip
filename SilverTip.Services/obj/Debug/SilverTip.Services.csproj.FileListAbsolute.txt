@@ -8,3 +8,13 @@ D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.dll
 D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.dll
 D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.xml
 D:\SilverTip\SourceCode\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Dev\SilverTip.Services\bin\Debug\SilverTip.Services.dll.config
+C:\Project\Dev\SilverTip.Services\bin\Debug\SilverTip.Services.dll
+C:\Project\Dev\SilverTip.Services\bin\Debug\SilverTip.Services.pdb
+C:\Project\Dev\SilverTip.Services\bin\Debug\EntityFramework.dll
+C:\Project\Dev\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Dev\SilverTip.Services\bin\Debug\EntityFramework.xml
+C:\Project\Dev\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.xml
+C:\Project\Dev\SilverTip.Services\obj\Debug\SilverTip.Services.csprojResolveAssemblyReference.cache
+C:\Project\Dev\SilverTip.Services\obj\Debug\SilverTip.Services.dll
+C:\Project\Dev\SilverTip.Services\obj\Debug\SilverTip.Services.pdb
