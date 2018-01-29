@@ -182,3 +182,7 @@ C:\Project\Dev\SilverTip.API\bin\System.Web.Http.Owin.xml
 C:\Project\Dev\SilverTip.API\obj\Debug\SilverTip.API.csprojResolveAssemblyReference.cache
 C:\Project\Dev\SilverTip.API\obj\Debug\SilverTip.API.dll
 C:\Project\Dev\SilverTip.API\obj\Debug\SilverTip.API.pdb
+C:\Project\Dev\SilverTip.API\bin\SilverTip.Common.dll
+C:\Project\Dev\SilverTip.API\bin\SilverTip.InterfaceServices.dll
+C:\Project\Dev\SilverTip.API\bin\SilverTip.Common.pdb
+C:\Project\Dev\SilverTip.API\bin\SilverTip.InterfaceServices.pdb

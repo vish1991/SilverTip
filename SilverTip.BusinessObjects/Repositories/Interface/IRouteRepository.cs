@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SilverTip.BusinessObjects.Repositories
 {
-    public interface PaymentTypesRepository : IRepository<PaymentType>
+    public interface IRouteRepository : IRepository<Route>
     {
     }
 }

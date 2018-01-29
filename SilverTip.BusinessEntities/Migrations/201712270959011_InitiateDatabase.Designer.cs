@@ -13,7 +13,7 @@ namespace SilverTip.BusinessEntities.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201712270523105_InitiateDatabase"; }
+            get { return "201712270959011_InitiateDatabase"; }
         }
         
         string IMigrationMetadata.Source

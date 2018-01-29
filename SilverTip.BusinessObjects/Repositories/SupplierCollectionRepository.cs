@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SilverTip.BusinessObjects.Repositories
 {
-    public class SupplierCollectionRepository : RepositoryBase<SupplierCollection>, SupplierCollectionsRepository
+    public class SupplierCollectionRepository : RepositoryBase<SupplierCollection>, ISupplierCollectionRepository
     {
         public SupplierCollectionRepository(IDbFactory dbFactory) : base(dbFactory)
         {

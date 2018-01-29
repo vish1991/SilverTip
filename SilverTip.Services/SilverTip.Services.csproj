@@ -40,6 +40,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -49,11 +50,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntityService.cs" />
+    <Compile Include="EventLogService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SupplierService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj">
+      <Project>{18211c7d-f18d-4345-a076-04d2db072f25}</Project>
+      <Name>SilverTip.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverTip.BusinessObjects\SilverTip.BusinessObjects.csproj">
+      <Project>{42e1d045-5b7e-4e78-ba8f-b697348443d5}</Project>
+      <Name>SilverTip.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverTip.InterfaceServices\SilverTip.InterfaceServices.csproj">
+      <Project>{1d744f3d-ecd4-463c-b94f-eb444ebfa47f}</Project>
+      <Name>SilverTip.InterfaceServices</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

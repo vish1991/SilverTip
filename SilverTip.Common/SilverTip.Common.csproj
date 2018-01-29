@@ -50,6 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReadOnlyValue.cs" />
+    <Compile Include="ViewModels\LeafCollectionViewModels.cs" />
+    <Compile Include="ViewModels\SupplierViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

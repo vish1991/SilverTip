@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SilverTip.BusinessObjects.Repositories
 {
-    public class LeafTypeRepository : RepositoryBase<LeafType>, LeafTypesRepository
+    public class LeafTypeRepository : RepositoryBase<LeafType>, ILeafTypeRepository
     {
         public LeafTypeRepository(IDbFactory dbFactory) : base(dbFactory)
         {

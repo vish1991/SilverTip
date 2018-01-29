@@ -13,12 +13,11 @@ namespace Boughtleaf.BusinessEntities
     {
         [Key]
         public int Id { get; set; }
-        [Required]
-        [MaxLength(100)]
-        public string Code { get; set; }
-        [Required]
-        [MaxLength(200)]
-        public string Name { get; set; }
+        
+        public int? BankId { get; set; }
+        public string AccountNumber { get; set; }
+        public string AccountName { get; set; }
+        public string Branch { get; set; }
         public bool IsActive { get; set; }
         public int PaymentTypeId { get; set; }
         public int SupplierId { get; set; }
@@ -26,5 +25,7 @@ namespace Boughtleaf.BusinessEntities
         public virtual PaymentType PayementType { get; set; }
         [ForeignKey("SupplierId")]
         public virtual Supplier Supplier { get; set; }
+        [ForeignKey("BankId")]
+        public virtual Bank Bank { get; set; }
     }
 }

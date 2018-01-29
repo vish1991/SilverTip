@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SilverTip.BusinessObjects.Repositories
 {
-    public class FundModeRepository : RepositoryBase<FundMode>, FundModesRepository
+    public class FundModeRepository : RepositoryBase<FundMode>, IFundModeRepository
     {
         public FundModeRepository(IDbFactory dbFactory) : base(dbFactory)
         {

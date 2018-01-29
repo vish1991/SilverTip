@@ -38,6 +38,7 @@ namespace SilverTip.BusinessEntities
         public virtual DbSet<SupplierFund> SupplierFunds { get; set; }
         public virtual DbSet<SupplierPaymentType> SupplierPaymentTypes { get; set; }
         public virtual DbSet<SupplierType> SupplierTypes { get; set; }
+        public virtual DbSet<LogMessage> LogMessages { get; set; }
     }
 
     //public class MyEntity

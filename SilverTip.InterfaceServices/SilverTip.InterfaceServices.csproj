@@ -49,11 +49,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IEntityService.cs" />
+    <Compile Include="IEventLogService.cs" />
+    <Compile Include="ISupplierService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj">
+      <Project>{18211c7d-f18d-4345-a076-04d2db072f25}</Project>
+      <Name>SilverTip.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverTip.BusinessObjects\SilverTip.BusinessObjects.csproj">
+      <Project>{42e1d045-5b7e-4e78-ba8f-b697348443d5}</Project>
+      <Name>SilverTip.BusinessObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

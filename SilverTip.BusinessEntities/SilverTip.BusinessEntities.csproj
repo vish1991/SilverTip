@@ -61,9 +61,10 @@
     <Compile Include="LeafCollection.cs" />
     <Compile Include="LeafReconciliation.cs" />
     <Compile Include="LeafType.cs" />
-    <Compile Include="Migrations\201712270523105_InitiateDatabase.cs" />
-    <Compile Include="Migrations\201712270523105_InitiateDatabase.Designer.cs">
-      <DependentUpon>201712270523105_InitiateDatabase.cs</DependentUpon>
+    <Compile Include="LogMessage.cs" />
+    <Compile Include="Migrations\201712270959011_InitiateDatabase.cs" />
+    <Compile Include="Migrations\201712270959011_InitiateDatabase.Designer.cs">
+      <DependentUpon>201712270959011_InitiateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="PaymentType.cs" />
@@ -83,12 +84,12 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201712270523105_InitiateDatabase.resx">
-      <DependentUpon>201712270523105_InitiateDatabase.cs</DependentUpon>
-    </EmbeddedResource>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <EmbeddedResource Include="Migrations\201712270959011_InitiateDatabase.resx">
+      <DependentUpon>201712270959011_InitiateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

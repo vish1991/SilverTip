@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SilverTip.BusinessObjects.Repositories
 {
-    public class RouteRepository : RepositoryBase<Route>, RoutesRepository
+    public class RouteRepository : RepositoryBase<Route>, IRouteRepository
     {
         public RouteRepository(IDbFactory dbFactory) : base(dbFactory)
         {

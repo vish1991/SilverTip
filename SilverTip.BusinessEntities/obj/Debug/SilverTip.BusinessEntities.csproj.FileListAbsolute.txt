@@ -40,7 +40,7 @@ C:\Project\Dev\SilverTip.BusinessEntities\bin\Debug\EntityFramework.SqlServer.dl
 C:\Project\Dev\SilverTip.BusinessEntities\bin\Debug\EntityFramework.xml
 C:\Project\Dev\SilverTip.BusinessEntities\bin\Debug\EntityFramework.SqlServer.xml
 C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csprojResolveAssemblyReference.cache
-C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.Migrations.InitiateDatabase.resources
-C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csproj.GenerateResource.Cache
 C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.dll
 C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.pdb
+C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.Migrations.InitiateDatabase.resources
+C:\Project\Dev\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csproj.GenerateResource.Cache

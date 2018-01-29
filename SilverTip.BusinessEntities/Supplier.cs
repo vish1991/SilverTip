@@ -44,14 +44,12 @@ namespace SilverTip.BusinessEntities
         public DateTime CreatedDate { get; set; }
         public string ModifiedBy { get; set; }
         public DateTime ModifiedDate { get; set; }
-        public int BankId { get; set; }
         [ForeignKey("RouteId")]
         public virtual Route Route { get; set; }
         [ForeignKey("SupplierTypeId")]
         public virtual SupplierType SupplierType { get; set; }
         [ForeignKey("LeafTypeId")]
         public virtual LeafType LeafType { get; set; }
-        public virtual ICollection<Bank> Bank { get; set; }
         public virtual ICollection<SupplierFund> SupplierFunds { get; set; }
         public virtual ICollection<SupplierPaymentType> SupplierPaymentTypes { get; set; }
         public virtual ICollection<SupplierCollection> SupplierCollections { get; set; }
