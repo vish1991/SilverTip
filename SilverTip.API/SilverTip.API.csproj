@@ -44,6 +44,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Autofac, Version=4.6.2.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.4.6.2\lib\net45\Autofac.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Autofac.Integration.WebApi, Version=4.1.0.0, Culture=neutral, PublicKeyToken=17863af14b0044da, processorArchitecture=MSIL">
+      <HintPath>..\packages\Autofac.WebApi2.4.1.0\lib\net45\Autofac.Integration.WebApi.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.AI.Agent.Intercept, Version=1.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.1.2.1\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
       <Private>True</Private>
@@ -80,6 +88,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -199,6 +209,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Start\Bootstrapper.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\IdentityConfig.cs" />
@@ -326,6 +337,10 @@
       <Project>{18211c7d-f18d-4345-a076-04d2db072f25}</Project>
       <Name>SilverTip.BusinessEntities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SilverTip.BusinessObjects\SilverTip.BusinessObjects.csproj">
+      <Project>{42E1D045-5B7E-4E78-BA8F-B697348443D5}</Project>
+      <Name>SilverTip.BusinessObjects</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SilverTip.Common\SilverTip.Common.csproj">
       <Project>{b6089d90-fe56-4b81-bd12-854dc64f001d}</Project>
       <Name>SilverTip.Common</Name>
@@ -333,6 +348,10 @@
     <ProjectReference Include="..\SilverTip.InterfaceServices\SilverTip.InterfaceServices.csproj">
       <Project>{1D744F3D-ECD4-463C-B94F-EB444EBFA47F}</Project>
       <Name>SilverTip.InterfaceServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverTip.Services\SilverTip.Services.csproj">
+      <Project>{88E96147-5BBE-41CA-BF71-6FE24214E366}</Project>
+      <Name>SilverTip.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

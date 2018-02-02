@@ -186,3 +186,11 @@ C:\Project\Dev\SilverTip.API\bin\SilverTip.Common.dll
 C:\Project\Dev\SilverTip.API\bin\SilverTip.InterfaceServices.dll
 C:\Project\Dev\SilverTip.API\bin\SilverTip.Common.pdb
 C:\Project\Dev\SilverTip.API\bin\SilverTip.InterfaceServices.pdb
+C:\Project\Dev\SilverTip.API\bin\Autofac.dll
+C:\Project\Dev\SilverTip.API\bin\Autofac.Integration.WebApi.dll
+C:\Project\Dev\SilverTip.API\bin\SilverTip.BusinessObjects.dll
+C:\Project\Dev\SilverTip.API\bin\SilverTip.Services.dll
+C:\Project\Dev\SilverTip.API\bin\SilverTip.BusinessObjects.pdb
+C:\Project\Dev\SilverTip.API\bin\SilverTip.Services.pdb
+C:\Project\Dev\SilverTip.API\bin\Autofac.xml
+C:\Project\Dev\SilverTip.API\bin\Autofac.Integration.WebApi.xml

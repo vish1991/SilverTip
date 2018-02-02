@@ -1,4 +1,5 @@
-﻿using SilverTip.BusinessEntities;
+﻿using SilverTip.API.App_Start;
+using SilverTip.BusinessEntities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,7 @@ namespace SilverTip.API
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+            Bootstrapper.Run();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
