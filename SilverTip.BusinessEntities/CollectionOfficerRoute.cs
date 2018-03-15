@@ -9,7 +9,8 @@ using System.Threading.Tasks;
 namespace SilverTip.BusinessEntities
 {
     public class CollectionOfficerRoute
-    {   [Key]
+    {
+        [Key]
         public int Id { get; set; }
         public DateTime Date { get; set; }
         public int CollectionOfficerId { get; set; }

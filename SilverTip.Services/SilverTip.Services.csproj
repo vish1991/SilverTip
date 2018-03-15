@@ -50,10 +50,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BankService.cs" />
+    <Compile Include="CollectionOfficerRouteService.cs" />
+    <Compile Include="CollectionOfficerService.cs" />
     <Compile Include="EntityService.cs" />
     <Compile Include="EventLogService.cs" />
+    <Compile Include="FundModeService.cs" />
+    <Compile Include="FundService.cs" />
+    <Compile Include="LeafTypeService.cs" />
+    <Compile Include="PaymentTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RouteService.cs" />
+    <Compile Include="SupplierPaymentTypeService.cs" />
     <Compile Include="SupplierService.cs" />
+    <Compile Include="SupplierTypeService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -49,9 +49,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IBankService.cs" />
+    <Compile Include="ICollectionOfficerRouteService.cs" />
+    <Compile Include="ICollectionOfficerService.cs" />
     <Compile Include="IEntityService.cs" />
     <Compile Include="IEventLogService.cs" />
+    <Compile Include="IFundModeService.cs" />
+    <Compile Include="IFundService.cs" />
+    <Compile Include="ILeafTypeService.cs" />
+    <Compile Include="IPaymentTypeService.cs" />
+    <Compile Include="IRouteService.cs" />
+    <Compile Include="ISupplierPaymentTypeService.cs" />
     <Compile Include="ISupplierService.cs" />
+    <Compile Include="ISupplierTypeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

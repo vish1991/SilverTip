@@ -7,10 +7,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Boughtleaf.BusinessEntities;
 
 namespace SilverTip.Services
 {
-    public class SupplierService: EntityService<Supplier>, ISupplierService
+    public class SupplierService : EntityService<Supplier>, ISupplierService
     {
         #region Member Variables
 
@@ -22,7 +23,7 @@ namespace SilverTip.Services
         #region Constructor
 
         public SupplierService(IUnitOfWork unitOfWork, ISupplierRepository supplierRepository)
-            :base(unitOfWork, supplierRepository)
+            : base(unitOfWork, supplierRepository)
         {
             try
             {
@@ -60,9 +61,53 @@ namespace SilverTip.Services
 
                 throw ex;
             }
-            
+
         }
         #endregion
 
+        #region Get All Supplier
+        public IEnumerable<Supplier> GetAllSupplier()
+        {
+            try
+            {
+                return base.GetAll(x => x.IsActive == true).ToList();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Update Supplier Details
+        public virtual void UpdateSupplierDetails(Supplier entity, List<string> properties, bool isIncluded, out string errorMessege)
+        {
+            try
+            {
+                base.Update(entity, properties, isIncluded);
+                errorMessege = String.Empty;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        //#region Update Supplier Account Details
+        //public void UpdateAccountDetails(Supplier entity, List<string> properties, bool isIncluded, out string errorMessege)
+        //{
+        //    try
+        //    {
+        //        base.Update(entity, properties, isIncluded);
+        //        errorMessege = String.Empty;
+        //    }
+        //    catch(Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //}
+        //#endregion
     }
 }

@@ -55,3 +55,4 @@ namespace SilverTip.BusinessEntities
         public virtual ICollection<SupplierCollection> SupplierCollections { get; set; }
     }
 }
+

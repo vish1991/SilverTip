@@ -13,12 +13,12 @@ C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices
 C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.InterfaceServices.pdb
 C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.dll
 C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessEntities.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessObjects.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessEntities.pdb
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessObjects.pdb
 C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.xml
 C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.xml
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.csprojResolveAssemblyReference.cache
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.dll
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.pdb
-C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessEntities.dll
-C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessObjects.dll
-C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessEntities.pdb
-C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.BusinessObjects.pdb

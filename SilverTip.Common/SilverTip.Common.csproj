@@ -51,12 +51,28 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReadOnlyValue.cs" />
+    <Compile Include="ViewModels\BankViewModels.cs" />
+    <Compile Include="ViewModels\CollectionOfficerRouteViewModels.cs" />
+    <Compile Include="ViewModels\CollectionOfficerViewModels.cs" />
+    <Compile Include="ViewModels\FundModeViewModels.cs" />
+    <Compile Include="ViewModels\FundViewModels.cs" />
     <Compile Include="ViewModels\LeafCollectionViewModels.cs" />
+    <Compile Include="ViewModels\LeafTypeViewModels.cs" />
+    <Compile Include="ViewModels\PaymentTypeViewModels.cs" />
+    <Compile Include="ViewModels\RouteViewModels.cs" />
+    <Compile Include="ViewModels\SupplierPaymentTypeViewModels.cs" />
+    <Compile Include="ViewModels\SupplierTypeViewModels.cs" />
     <Compile Include="ViewModels\SupplierViewModels.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj">
+      <Project>{18211C7D-F18D-4345-A076-04D2DB072F25}</Project>
+      <Name>SilverTip.BusinessEntities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

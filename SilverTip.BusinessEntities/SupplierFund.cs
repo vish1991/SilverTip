@@ -19,7 +19,7 @@ namespace Boughtleaf.BusinessEntities
         public int FundId {get; set;}
 
         public int FundModeId { get; set; }
-
+    
         public decimal Amount { get; set; }
         public string CreatedBy { get; set; }
         public DateTime CreatedDate { get; set; }

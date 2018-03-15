@@ -13,7 +13,6 @@ namespace Boughtleaf.BusinessEntities
     {
         [Key]
         public int Id { get; set; }
-        
         public int? BankId { get; set; }
         public string AccountNumber { get; set; }
         public string AccountName { get; set; }

@@ -13,6 +13,8 @@ C:\Project\Dev\SilverTip.Common\bin\Debug\SilverTip.Common.dll
 C:\Project\Dev\SilverTip.Common\bin\Debug\SilverTip.Common.pdb
 C:\Project\Dev\SilverTip.Common\bin\Debug\EntityFramework.dll
 C:\Project\Dev\SilverTip.Common\bin\Debug\EntityFramework.SqlServer.dll
+C:\Project\Dev\SilverTip.Common\bin\Debug\SilverTip.BusinessEntities.dll
+C:\Project\Dev\SilverTip.Common\bin\Debug\SilverTip.BusinessEntities.pdb
 C:\Project\Dev\SilverTip.Common\bin\Debug\EntityFramework.xml
 C:\Project\Dev\SilverTip.Common\bin\Debug\EntityFramework.SqlServer.xml
 C:\Project\Dev\SilverTip.Common\obj\Debug\SilverTip.Common.csprojResolveAssemblyReference.cache
