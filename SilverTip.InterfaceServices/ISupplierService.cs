@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Boughtleaf.BusinessEntities;
+using SilverTip.Common.ViewModels;
 
 namespace SilverTip.InterfaceServices
 {
@@ -13,5 +14,6 @@ namespace SilverTip.InterfaceServices
         void Add(Supplier entity, out string errorMessege);
         IEnumerable<Supplier> GetAllSupplier();
         void UpdateSupplierDetails(Supplier entity, List<string> properties, bool isIncluded, out string errorMessege);
+        IEnumerable<SupplierGridViewModel> SearchSupplier(int pageSize, int pageNum, string registrationNo, string fullName, int routeId, int typeId, bool isActive, string sortColumn, string sortOrder);
     }
 }

@@ -80,6 +80,7 @@
     <Compile Include="Repositories\Interface\ISupplierPaymentTypeRepository.cs" />
     <Compile Include="Repositories\Interface\ISupplierRepository.cs" />
     <Compile Include="Repositories\Interface\ISupplierTypeRepository.cs" />
+    <Compile Include="Repositories\Interface\ISupplierSearchRepository.cs" />
     <Compile Include="Repositories\ItemCategoryRepository.cs" />
     <Compile Include="Repositories\ItemRepository.cs" />
     <Compile Include="Repositories\LeafCollectionRepository.cs" />
@@ -93,6 +94,7 @@
     <Compile Include="Repositories\SupplierPaymentTypeRepository.cs" />
     <Compile Include="Repositories\SupplierRepository.cs" />
     <Compile Include="Repositories\SupplierTypeRepository.cs" />
+    <Compile Include="Repositories\SupplierSearchRepository.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
@@ -103,6 +105,10 @@
     <ProjectReference Include="..\SilverTip.BusinessEntities\SilverTip.BusinessEntities.csproj">
       <Project>{18211c7d-f18d-4345-a076-04d2db072f25}</Project>
       <Name>SilverTip.BusinessEntities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SilverTip.Common\SilverTip.Common.csproj">
+      <Project>{B6089D90-FE56-4B81-BD12-854DC64F001D}</Project>
+      <Name>SilverTip.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

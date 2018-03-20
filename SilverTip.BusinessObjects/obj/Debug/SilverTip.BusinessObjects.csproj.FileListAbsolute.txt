@@ -22,3 +22,5 @@ C:\Project\Dev\SilverTip.BusinessObjects\bin\Debug\EntityFramework.SqlServer.xml
 C:\Project\Dev\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.csprojResolveAssemblyReference.cache
 C:\Project\Dev\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.dll
 C:\Project\Dev\SilverTip.BusinessObjects\obj\Debug\SilverTip.BusinessObjects.pdb
+C:\Project\Dev\SilverTip.BusinessObjects\bin\Debug\SilverTip.Common.dll
+C:\Project\Dev\SilverTip.BusinessObjects\bin\Debug\SilverTip.Common.pdb

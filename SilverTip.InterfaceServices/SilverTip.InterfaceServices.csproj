@@ -77,6 +77,10 @@
       <Project>{42e1d045-5b7e-4e78-ba8f-b697348443d5}</Project>
       <Name>SilverTip.BusinessObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SilverTip.Common\SilverTip.Common.csproj">
+      <Project>{B6089D90-FE56-4B81-BD12-854DC64F001D}</Project>
+      <Name>SilverTip.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

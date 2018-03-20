@@ -78,6 +78,10 @@
       <Project>{42e1d045-5b7e-4e78-ba8f-b697348443d5}</Project>
       <Name>SilverTip.BusinessObjects</Name>
     </ProjectReference>
+    <ProjectReference Include="..\SilverTip.Common\SilverTip.Common.csproj">
+      <Project>{B6089D90-FE56-4B81-BD12-854DC64F001D}</Project>
+      <Name>SilverTip.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SilverTip.InterfaceServices\SilverTip.InterfaceServices.csproj">
       <Project>{1d744f3d-ecd4-463c-b94f-eb444ebfa47f}</Project>
       <Name>SilverTip.InterfaceServices</Name>

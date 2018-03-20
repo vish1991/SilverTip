@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Boughtleaf.BusinessEntities;
+using System.Data.SqlClient;
+using SilverTip.Common.ViewModels;
 
 namespace SilverTip.Services
 {
@@ -17,18 +19,19 @@ namespace SilverTip.Services
 
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISupplierRepository _supplierRepository;
-
+        private readonly ISupplierSearchRepository _supplierSearchRepository;
         #endregion Member Variables
 
         #region Constructor
 
-        public SupplierService(IUnitOfWork unitOfWork, ISupplierRepository supplierRepository)
+        public SupplierService(IUnitOfWork unitOfWork, ISupplierRepository supplierRepository, ISupplierSearchRepository supplierSearchRepository)
             : base(unitOfWork, supplierRepository)
         {
             try
             {
                 _unitOfWork = unitOfWork;
                 _supplierRepository = supplierRepository;
+                _supplierSearchRepository = supplierSearchRepository;
             }
             catch (Exception ex)
             {
@@ -92,6 +95,33 @@ namespace SilverTip.Services
             {
                 throw ex;
             }
+        }
+        #endregion
+
+        #region Search Supplier
+        public IEnumerable<SupplierGridViewModel> SearchSupplier(int pageSize, int pageNum, string registrationNo, string fullName, int routeId, int typeId, bool isActive, string sortColumn, string sortOrder)
+        {
+            try
+            {
+                string errorMessage = String.Empty;
+                object[] param ={
+                new SqlParameter("@registrationNo", registrationNo),
+                new SqlParameter("@fullName", fullName),
+                new SqlParameter("@routeId", routeId),
+                new SqlParameter("@typeId", typeId),
+                new SqlParameter("@isActive", isActive),
+                new SqlParameter("@pageSize", pageSize),
+                new SqlParameter("@pageNum", pageNum),
+                new SqlParameter("@sortColumn", sortColumn),
+                new SqlParameter("@sortOrder", sortOrder)
+            };
+                return _supplierSearchRepository.ExecuteStoredProcedure("dbo.SearchSuppliers @pagesize, @pageNum, @id, @registrationNo, @fullName, @address, @routeId, @typeId, @isActive, @sortColumn, @sortOrder", param);
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+            
         }
         #endregion
 

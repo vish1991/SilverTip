@@ -22,3 +22,5 @@ C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\EntityFramework.SqlServer.x
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.csprojResolveAssemblyReference.cache
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.dll
 C:\Project\Dev\SilverTip.InterfaceServices\obj\Debug\SilverTip.InterfaceServices.pdb
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.Common.dll
+C:\Project\Dev\SilverTip.InterfaceServices\bin\Debug\SilverTip.Common.pdb

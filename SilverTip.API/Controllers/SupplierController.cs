@@ -1,4 +1,5 @@
 ﻿using Boughtleaf.BusinessEntities;
+using Microsoft.AspNet.Identity;
 using SilverTip.BusinessEntities;
 using SilverTip.Common;
 using SilverTip.Common.ViewModels;
@@ -59,7 +60,7 @@ namespace SilverTip.API.Controllers
                     supplierPaymentType.Branch = supplier.supplierPaymentTypes.branch;
                     entity.SupplierPaymentTypes.Add(supplierPaymentType);
 
-                    foreach (SupplierFundViewModel fundsVm in supplier.SupplierFunds)
+                    foreach (SupplierFundViewModel fundsVm in supplier.supplierFunds)
                     {
                         SupplierFund supplierFund = new SupplierFund();
 
@@ -141,6 +142,38 @@ namespace SilverTip.API.Controllers
             }
         }
 
+        [HttpPost]
+        public IHttpActionResult SearchSupplier(SupplierGridSearchCriteriaViewModel searchData) {
+            try
+            {
+                IList<SupplierGridData> suppliersList = new List<SupplierGridData>();
+                IEnumerable<SupplierGridViewModel> supplierDataList = new List<SupplierGridViewModel>();
+                supplierDataList = _supplier.SearchSupplier(searchData.pageSize, searchData.pageNum, searchData.registrationNo, searchData.fullName, searchData.routeId, searchData.typeId, searchData.isActive, searchData.sortColumn, searchData.sortOrder);
+                foreach (SupplierGridViewModel supplier in supplierDataList)
+                {
+                    SupplierGridData supplierViewModel = new SupplierGridData();
+
+                    supplierViewModel.fullName = supplier.fullName;
+                    supplierViewModel.registrationNo = supplier.registrationNo;
+                    supplierViewModel.routeName = supplier.routeName;
+                    supplierViewModel.typeName = supplier.typeName;
+                    supplierViewModel.isActive = supplier.isActive;
+                    supplierViewModel.totalRows = supplier.totalRows;
+
+                    suppliersList.Add(supplierViewModel);
+                }
+                var messageData = new { code = ReadOnlyValue.SuccessMessageCode, message = ReadOnlyValue.MessageSuccess };
+                var returnObject = new { suppliersList = suppliersList, messageCode = messageData };
+                return Ok(returnObject);
+            }
+            catch(Exception ex)
+            {
+                string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
+                var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+        }
         //[HttpPost]
         //public IHttpActionResult UpdateSupplierDetails(SupplierFormViewModel supplier)
         //{
