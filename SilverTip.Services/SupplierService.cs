@@ -115,7 +115,7 @@ namespace SilverTip.Services
                 new SqlParameter("@sortColumn", sortColumn),
                 new SqlParameter("@sortOrder", sortOrder)
             };
-                return _supplierSearchRepository.ExecuteStoredProcedure("dbo.SearchSuppliers @pagesize, @pageNum, @id, @registrationNo, @fullName, @address, @routeId, @typeId, @isActive, @sortColumn, @sortOrder", param);
+                return _supplierSearchRepository.ExecuteStoredProcedure("dbo.SearchSuppliers @pagesize, @pageNum, @registrationNo, @fullName, @routeId, @typeId, @isActive, @sortColumn, @sortOrder", param);
             }
             catch(Exception ex)
             {

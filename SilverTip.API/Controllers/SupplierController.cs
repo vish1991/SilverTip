@@ -28,7 +28,7 @@ namespace SilverTip.API.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult CreateSupplier(SupplierFormViewModel supplier)
+        public IHttpActionResult CreateSuppliers(SupplierFormViewModel supplier)
         {
             try
             {
@@ -50,7 +50,7 @@ namespace SilverTip.API.Controllers
                     entity.CreatedBy = "admin";//User.Identity.Name;
                     entity.ModifiedBy = "admin";
                     entity.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
-                                        
+
                     SupplierPaymentType supplierPaymentType = new SupplierPaymentType();
                     supplierPaymentType.SupplierId = entity.Id;
                     supplierPaymentType.PaymentTypeId = supplier.supplierPaymentTypes.paymentModes.id;
@@ -143,21 +143,22 @@ namespace SilverTip.API.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult SearchSupplier(SupplierGridSearchCriteriaViewModel searchData) {
+        public IHttpActionResult SearchSupplierGrid(SupplierGridSearchCriteriaViewModel searchData)
+        {
             try
             {
                 IList<SupplierGridData> suppliersList = new List<SupplierGridData>();
                 IEnumerable<SupplierGridViewModel> supplierDataList = new List<SupplierGridViewModel>();
-                supplierDataList = _supplier.SearchSupplier(searchData.pageSize, searchData.pageNum, searchData.registrationNo, searchData.fullName, searchData.routeId, searchData.typeId, searchData.isActive, searchData.sortColumn, searchData.sortOrder);
+                supplierDataList = _supplier.SearchSupplier(searchData.pageSize, searchData.pageNum, searchData.registrationNo, searchData.fullName, searchData.routesId, searchData.typesId, searchData.isActive, searchData.sortColumn, searchData.sortOrder);
                 foreach (SupplierGridViewModel supplier in supplierDataList)
                 {
                     SupplierGridData supplierViewModel = new SupplierGridData();
 
-                    supplierViewModel.fullName = supplier.fullName;
-                    supplierViewModel.registrationNo = supplier.registrationNo;
-                    supplierViewModel.routeName = supplier.routeName;
-                    supplierViewModel.typeName = supplier.typeName;
-                    supplierViewModel.isActive = supplier.isActive;
+                    supplierViewModel.registrationNo = supplier.RegNo;
+                    supplierViewModel.fullName = supplier.FullName;
+                    supplierViewModel.routeName = supplier.route;
+                    supplierViewModel.typeName = supplier.type;
+                    supplierViewModel.isActive = supplier.IsActive;
                     supplierViewModel.totalRows = supplier.totalRows;
 
                     suppliersList.Add(supplierViewModel);
@@ -166,7 +167,7 @@ namespace SilverTip.API.Controllers
                 var returnObject = new { suppliersList = suppliersList, messageCode = messageData };
                 return Ok(returnObject);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
                 var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };

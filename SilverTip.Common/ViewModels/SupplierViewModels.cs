@@ -63,8 +63,8 @@ namespace SilverTip.Common.ViewModels
         public string fullName { get; set; }
         [StringLength(500)]
         public string address { get; set; }
-        public int routeId { get; set; }
-        public int typeId { get; set; }
+        public int routesId { get; set; }
+        public int typesId { get; set; }
         public bool isActive { get; set; }
         public int pageSize { get; set; }
         public int pageNum { get; set; }
@@ -73,11 +73,11 @@ namespace SilverTip.Common.ViewModels
     }
     public class SupplierGridViewModel
     {
-        public string registrationNo { get; set; }
-        public string fullName { get; set; }
-        public bool isActive { get; set; }
-        public string routeName { get; set; }
-        public string typeName { get; set; }
+        public string RegNo { get; set; }
+        public string FullName { get; set; }
+        public bool IsActive { get; set; }
+        public string route { get; set; }
+        public string type { get; set; }
         public int totalRows { get; set; }
     }
     public class SupplierGridData
