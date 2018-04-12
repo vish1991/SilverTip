@@ -26,3 +26,21 @@ C:\Project\Dev\SilverTip.Services\obj\Debug\SilverTip.Services.dll
 C:\Project\Dev\SilverTip.Services\obj\Debug\SilverTip.Services.pdb
 C:\Project\Dev\SilverTip.Services\bin\Debug\SilverTip.Common.dll
 C:\Project\Dev\SilverTip.Services\bin\Debug\SilverTip.Common.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.Services.dll.config
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.Services.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.Services.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\EntityFramework.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.BusinessEntities.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.BusinessObjects.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.Common.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.InterfaceServices.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.BusinessEntities.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.BusinessObjects.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.Common.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\SilverTip.InterfaceServices.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\EntityFramework.xml
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\bin\Debug\EntityFramework.SqlServer.xml
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\obj\Debug\SilverTip.Services.csprojResolveAssemblyReference.cache
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\obj\Debug\SilverTip.Services.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Services\obj\Debug\SilverTip.Services.pdb

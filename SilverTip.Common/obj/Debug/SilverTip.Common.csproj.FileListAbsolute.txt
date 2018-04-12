@@ -20,3 +20,15 @@ C:\Project\Dev\SilverTip.Common\bin\Debug\EntityFramework.SqlServer.xml
 C:\Project\Dev\SilverTip.Common\obj\Debug\SilverTip.Common.csprojResolveAssemblyReference.cache
 C:\Project\Dev\SilverTip.Common\obj\Debug\SilverTip.Common.dll
 C:\Project\Dev\SilverTip.Common\obj\Debug\SilverTip.Common.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\SilverTip.Common.dll.config
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\SilverTip.Common.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\SilverTip.Common.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\EntityFramework.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\EntityFramework.SqlServer.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\SilverTip.BusinessEntities.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\SilverTip.BusinessEntities.pdb
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\EntityFramework.xml
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\bin\Debug\EntityFramework.SqlServer.xml
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\obj\Debug\SilverTip.Common.csprojResolveAssemblyReference.cache
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\obj\Debug\SilverTip.Common.dll
+E:\Allion Technologies\SilverTipAPI\SilverTip.Common\obj\Debug\SilverTip.Common.pdb

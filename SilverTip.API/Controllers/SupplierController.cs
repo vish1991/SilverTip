@@ -142,6 +142,7 @@ namespace SilverTip.API.Controllers
             }
         }
 
+
         [HttpPost]
         public IHttpActionResult SearchSupplierGrid(SupplierGridSearchCriteriaViewModel searchData)
         {
@@ -153,9 +154,14 @@ namespace SilverTip.API.Controllers
                 foreach (SupplierGridViewModel supplier in supplierDataList)
                 {
                     SupplierGridData supplierViewModel = new SupplierGridData();
-
+                    supplierViewModel.id = supplier.Id;
                     supplierViewModel.registrationNo = supplier.RegNo;
                     supplierViewModel.fullName = supplier.FullName;
+                    supplierViewModel.address = supplier.Address;
+                    supplierViewModel.contactNumber = supplier.ContactNo;
+                    supplierViewModel.nicNo = supplier.NICNo;
+                    supplierViewModel.routeID = supplier.sRouteId;
+                    supplierViewModel.typeID = supplier.sTypeId;
                     supplierViewModel.routeName = supplier.route;
                     supplierViewModel.typeName = supplier.type;
                     supplierViewModel.isActive = supplier.IsActive;
@@ -175,57 +181,117 @@ namespace SilverTip.API.Controllers
                 return Ok(returnObject);
             }
         }
-        //[HttpPost]
-        //public IHttpActionResult UpdateSupplierDetails(SupplierFormViewModel supplier)
-        //{
-        //    try
-        //    {
-        //        string errorMessege = string.Empty;
-        //        if (ModelState.IsValid)
-        //        {
-        //            Supplier entity = new Supplier();
-        //            entity.RegNo = supplier.regNo;
-        //            entity.FullName = supplier.fullName;
-        //            entity.Address = supplier.address;
-        //            entity.ContactNo = supplier.contactNo;
-        //            entity.Route.Name = supplier.routeName;
-        //            entity.SupplierType.Name = supplier.supplierTypeName;
-        //            entity.NICNo = supplier.nicNo;
-        //            entity.CreatedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
-        //            entity.CreatedBy = "admin";//User.Identity.Name;
-        //            entity.ModifiedBy = "admin";
-        //            entity.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"])); ;
 
-        //            List<string> properties = new List<string>();
-        //            properties.Add("RegNo");
-        //            properties.Add("FullName");
-        //            properties.Add("Address");
-        //            properties.Add("ContactNo");
-        //            properties.Add("Route.Name");
-        //            properties.Add("SupplierType.Name");
-        //            properties.Add("NICNo");
+        [HttpGet]
+        public IHttpActionResult GetSupplierDetails(int id)
+        {
+            try
+            {
+                //UpdateSupplierDetailsViewModel updateSupplierDetailsViewModel = new UpdateSupplierDetailsViewModel();
+                SupplierFormViewModel updateSupplierDetailsViewModel = new SupplierFormViewModel();
+                //SupplierPaymentTypeViewModel supplierPaymentType = new SupplierPaymentTypeViewModel();
+                Supplier supplier = new Supplier();
+                supplier = _supplier.GetSupplier(id);
+                if(supplier != null)
+                {
+                    updateSupplierDetailsViewModel.supplierPaymentTypes = new SupplierPaymentTypeViewModel();
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.accountName = supplier.SupplierPaymentTypes.FirstOrDefault().AccountName;
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.accountNumber = supplier.SupplierPaymentTypes.FirstOrDefault().AccountNumber;
 
-        //            _supplier.UpdateSupplierDetails(entity, properties, true, out errorMessege);
-        //        }
-        //        else
-        //        {
-        //            errorMessege = ReadOnlyValue.GeneralError;
-        //        }
-        //        var messageData = new
-        //        {
-        //            code = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.SuccessMessageCode : ReadOnlyValue.ErrorMessageCode,
-        //            message = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.MessageSuccess : errorMessege
-        //        };
-        //        var returnObject = new { messageCode = messageData };
-        //        return Ok(returnObject);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
-        //        var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };
-        //        var returnObject = new { messageCode = messageData };
-        //        return Ok(returnObject);
-        //    }
-        //}
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.banks = new BankViewModels();
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.banks.id = supplier.SupplierPaymentTypes.FirstOrDefault().Bank.Id;
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.banks.name = supplier.SupplierPaymentTypes.FirstOrDefault().Bank.Name;
+
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.branch = supplier.SupplierPaymentTypes.FirstOrDefault().Branch;
+
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.paymentModes = new PaymentTypeViewModels();
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.paymentModes.name = supplier.SupplierPaymentTypes.FirstOrDefault().PayementType.Name;
+                    updateSupplierDetailsViewModel.supplierPaymentTypes.paymentModes.id = supplier.SupplierPaymentTypes.FirstOrDefault().PayementType.Id;
+                }
+                var messageData = new { code = ReadOnlyValue.SuccessMessageCode, message = ReadOnlyValue.MessageSuccess };
+                var returnObject = new { updateSupplierDetailsViewModel = updateSupplierDetailsViewModel, messageCode = messageData };
+                return Ok(returnObject);
+            }
+            catch (Exception ex)
+            {
+                string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
+                var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+        }
+
+        [HttpPost]
+        public IHttpActionResult UpdateSupplierFinancialDetails(UpdateSupplierFinancialDetailsViewModel supplier)
+        {
+            try
+            {
+                string errorMessege = string.Empty;
+                if (ModelState.IsValid)
+                {
+                    List<string> properties = new List<string>();
+                    
+                    _supplier.UpdateSupplierFinanceDetails(supplier, properties, true, out errorMessege);
+                }
+                else
+                {
+                    errorMessege = ReadOnlyValue.GeneralError;
+                }
+                var messageData = new
+                {
+                    code = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.SuccessMessageCode : ReadOnlyValue.ErrorMessageCode,
+                    message = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.MessageSuccess : errorMessege
+                };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+            catch(Exception ex)
+            {
+                string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
+                var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+        }
+
+
+
+        [HttpPost]
+        public IHttpActionResult UpdateSupplierPersonalDetails(UpdateSupplierPersonalDetailsViewModel supplier)
+        {
+            try
+            {
+                string errorMessege = string.Empty;
+                if (ModelState.IsValid)
+                {
+
+                    List<string> properties = new List<string>();
+                    properties.Add("RegNo");
+                    properties.Add("FullName");
+                    properties.Add("Address");
+                    properties.Add("ContactNo");
+                    properties.Add("NICNo");
+                    _supplier.UpdateSupplierDetails(supplier, properties, true, out errorMessege);
+                }
+                else
+                {
+                    errorMessege = ReadOnlyValue.GeneralError;
+                }
+                var messageData = new
+                {
+                    code = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.SuccessMessageCode : ReadOnlyValue.ErrorMessageCode,
+                    message = String.IsNullOrEmpty(errorMessege) ? ReadOnlyValue.MessageSuccess : errorMessege
+                };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+            catch (Exception ex)
+            {
+                string errorLogId = _eventLogService.WriteLogs(User.Identity.Name, ex, MethodBase.GetCurrentMethod().Name);
+                var messageData = new { code = ReadOnlyValue.ErrorMessageCode, message = String.Format(ReadOnlyValue.MessageTaskmateError, errorLogId) };
+                var returnObject = new { messageCode = messageData };
+                return Ok(returnObject);
+            }
+        }
     }
 }

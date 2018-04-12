@@ -60,6 +60,7 @@
     <Compile Include="ViewModels\LeafTypeViewModels.cs" />
     <Compile Include="ViewModels\PaymentTypeViewModels.cs" />
     <Compile Include="ViewModels\RouteViewModels.cs" />
+    <Compile Include="ViewModels\SupplierFundViewModels.cs" />
     <Compile Include="ViewModels\SupplierPaymentTypeViewModels.cs" />
     <Compile Include="ViewModels\SupplierTypeViewModels.cs" />
     <Compile Include="ViewModels\SupplierViewModels.cs" />

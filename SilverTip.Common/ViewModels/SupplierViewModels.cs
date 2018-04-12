@@ -33,10 +33,10 @@ namespace SilverTip.Common.ViewModels
         public LeafTypeViewModels leafTypes { get; set; }
         public RouteViewModels routes { get; set; }
         public SupplierTypeViewModels types { get; set; }
-        public SupplierPaymentTypesViewModel supplierPaymentTypes { get; set; }
-        public IEnumerable<SupplierFundViewModel> supplierFunds { get; set; }
+        public SupplierPaymentTypeViewModel supplierPaymentTypes { get; set; }
+        public List<SupplierFundViewModel> supplierFunds { get; set; }
     }
-    public class SupplierPaymentTypesViewModel
+    public class SupplierPaymentTypeViewModel
     {
         [Key]
         public int id { get; set; }
@@ -73,8 +73,14 @@ namespace SilverTip.Common.ViewModels
     }
     public class SupplierGridViewModel
     {
+        public int Id { get; set; }
         public string RegNo { get; set; }
         public string FullName { get; set; }
+        public string Address { get; set; }
+        public string ContactNo { get; set; }
+        public string NICNo { get; set; }
+        public int sRouteId { get; set; }
+        public int sTypeId { get; set; }
         public bool IsActive { get; set; }
         public string route { get; set; }
         public string type { get; set; }
@@ -82,11 +88,42 @@ namespace SilverTip.Common.ViewModels
     }
     public class SupplierGridData
     {
+        public int id { get; set; }
         public string registrationNo { get; set; }
         public string fullName { get; set; }
+        public string address { get; set; }
+        public string contactNumber { get; set; }
+        public string nicNo { get; set; }
         public bool isActive { get; set; }
+        public int routeID { get; set; }
+        public int typeID { get; set; }
         public string routeName { get; set; }
         public string typeName { get; set; }
         public int totalRows { get; set; }
+    }
+
+    public class UpdateSupplierPersonalDetailsViewModel
+    {
+        public int id { get; set; }
+        public string registrationNo { get; set; }
+        public string fullName { get; set; }
+        public string address { get; set; }
+        public string contactNumber { get; set; }
+        public RouteViewModels routes { get; set; }
+        public SupplierTypeViewModels types { get; set; }
+        public string nicNo { get; set; }
+    }
+
+
+    public class UpdateSupplierFinancialDetailsViewModel
+    {
+        public string registrationNo { get; set; }
+        public PaymentTypeViewModels paymentModes { get; set; }
+        public string accountNumber { get; set; }
+        public string accountName { get; set; }
+        public BankViewModels banks { get; set; }
+        public string branch { get; set; }
+        public List<SupplierFundViewModel> supplierFunds { get; set; }
+        
     }
 }

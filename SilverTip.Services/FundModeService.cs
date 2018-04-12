@@ -52,11 +52,11 @@ namespace SilverTip.Services
         #endregion
 
         #region Get Fund Modes By Fund Id
-        public IEnumerable<FundMode> GetFundModeById(int id)
+        public FundMode GetFundModeById(int id)
         {
             try
             {
-                return base.GetAll(o => o.Id == id);
+                return base.GetAll(o => o.Id == id).FirstOrDefault();
             }
             catch(Exception ex)
             {

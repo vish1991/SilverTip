@@ -11,6 +11,6 @@ namespace SilverTip.InterfaceServices
     {
         IEnumerable<FundMode> GetFundModes();
 
-        IEnumerable<FundMode> GetFundModeById(int id);
+        FundMode GetFundModeById(int id);
     }
 }

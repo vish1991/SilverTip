@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using Boughtleaf.BusinessEntities;
 using System.Data.SqlClient;
 using SilverTip.Common.ViewModels;
+using System.Configuration;
+using SilverTip.BusinessObjects.Repositories.Interface;
 
 namespace SilverTip.Services
 {
@@ -20,11 +22,20 @@ namespace SilverTip.Services
         private readonly IUnitOfWork _unitOfWork;
         private readonly ISupplierRepository _supplierRepository;
         private readonly ISupplierSearchRepository _supplierSearchRepository;
+        private readonly IRouteRepository _routeRepository;
+        private readonly ISupplierTypeRepository _supplierTypeRepository;
+        private readonly ISupplierPaymentTypeRepository _supplierPaymentTypeRepository;
+        private readonly ISupplierFundsRepository _supplierFundsRepository;
+        private readonly IPaymentTypeRepository _paymentTypeRepository;
+        private readonly IBankRepository _bankRepository;
+
         #endregion Member Variables
 
         #region Constructor
 
-        public SupplierService(IUnitOfWork unitOfWork, ISupplierRepository supplierRepository, ISupplierSearchRepository supplierSearchRepository)
+        public SupplierService(IUnitOfWork unitOfWork, ISupplierRepository supplierRepository, ISupplierSearchRepository supplierSearchRepository, 
+            IRouteRepository routeRepository, ISupplierTypeRepository supplierTypeRepository, ISupplierPaymentTypeRepository supplierPaymentTypeRepository, 
+            ISupplierFundsRepository supplierFundsRepository, IPaymentTypeRepository paymentTypeRepository, IBankRepository bankRepository)
             : base(unitOfWork, supplierRepository)
         {
             try
@@ -32,6 +43,12 @@ namespace SilverTip.Services
                 _unitOfWork = unitOfWork;
                 _supplierRepository = supplierRepository;
                 _supplierSearchRepository = supplierSearchRepository;
+                _routeRepository = routeRepository;
+                _supplierTypeRepository = supplierTypeRepository;
+                _supplierPaymentTypeRepository = supplierPaymentTypeRepository;
+                _supplierFundsRepository = supplierFundsRepository;
+                _paymentTypeRepository = paymentTypeRepository;
+                _bankRepository = bankRepository;
             }
             catch (Exception ex)
             {
@@ -84,11 +101,52 @@ namespace SilverTip.Services
         #endregion
 
         #region Update Supplier Details
-        public virtual void UpdateSupplierDetails(Supplier entity, List<string> properties, bool isIncluded, out string errorMessege)
+        public virtual void UpdateSupplierDetails(UpdateSupplierPersonalDetailsViewModel entity, List<string> properties, bool isIncluded, out string errorMessege)
         {
             try
             {
-                base.Update(entity, properties, isIncluded);
+                using (var dbContextTransaction = _supplierRepository.DbContext.Database.BeginTransaction())
+                {
+                    try
+                    {
+                        Supplier supplier = new Supplier();
+
+                        supplier = _supplierRepository.Get(x => x.RegNo == entity.registrationNo).FirstOrDefault();
+                        supplier.RegNo = entity.registrationNo;
+                        supplier.FullName = entity.fullName;
+                        supplier.Address = entity.address;
+                        supplier.ContactNo = entity.contactNumber;
+                        supplier.NICNo = entity.nicNo;
+                        supplier.CreatedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
+                        supplier.CreatedBy = "admin";//User.Identity.Name;
+                        supplier.ModifiedBy = "admin";
+                        supplier.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"])); ;
+
+                        base.Update(supplier, properties, isIncluded);
+
+                        properties.Clear();
+                        properties.Add("Name");
+
+                        Route route = new Route();
+                        route = supplier.Route;
+                        route.Name = entity.routes.name;
+                        _routeRepository.Update(route, properties, true);
+
+                        properties.Clear();
+                        properties.Add("Name");
+                        SupplierType suppliertype = new SupplierType();
+                        suppliertype = supplier.SupplierType;
+                        suppliertype.Name = entity.types.name;
+                        _supplierTypeRepository.Update(suppliertype, properties, true);
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        dbContextTransaction.Rollback();
+                        throw ex;
+                    }
+                }
+                
                 errorMessege = String.Empty;
             }
             catch (Exception ex)
@@ -96,6 +154,69 @@ namespace SilverTip.Services
                 throw ex;
             }
         }
+        #endregion
+
+
+
+        #region Update Supplier Financial Details
+        public virtual void UpdateSupplierFinanceDetails(UpdateSupplierFinancialDetailsViewModel entity, List<string> properties, bool isIncluded, out string errorMessege)
+        {
+            try
+            {
+                Supplier supplier = new Supplier();
+                supplier = _supplierRepository.Get(x => x.RegNo == entity.registrationNo).FirstOrDefault();
+
+                SupplierPaymentType supplierPaymentType = new SupplierPaymentType();
+                supplierPaymentType = supplier.SupplierPaymentTypes.Where(x=>x.Id == entity.paymentModes.id).FirstOrDefault();
+
+                supplierPaymentType.AccountNumber = entity.accountNumber;
+                supplierPaymentType.AccountName = entity.accountName;
+                supplierPaymentType.Branch = entity.branch;
+
+                _supplierPaymentTypeRepository.Update(supplierPaymentType, properties, true);
+
+                properties.Clear();
+                properties.Add("Name");
+
+                PaymentType paymentType = new PaymentType();
+                paymentType.Name = entity.paymentModes.name;
+
+                _supplierPaymentTypeRepository.Update(supplierPaymentType, properties, true);
+
+                properties.Clear();
+                properties.Add("Name");
+
+                Bank bank = new Bank();
+                bank.Name = entity.banks.name;
+
+                _bankRepository.Update(bank, properties, true);
+
+                properties.Clear();
+                properties.Add("FundModeId");
+                properties.Add("FundId");
+                properties.Add("Amount");
+
+                foreach (SupplierFundViewModel item in entity.supplierFunds)
+                {
+                    SupplierFund supplierFund = new SupplierFund();
+                    supplierFund = _supplierFundsRepository.Get(x=>x.Id == item.fundModes.id).FirstOrDefault();
+                    supplierFund.FundModeId = item.fundModes.id;
+                    supplierFund.FundId = item.fundNames.id;
+                    supplierFund.Amount = item.fundAmount;
+
+                    _supplierFundsRepository.Update(supplierFund,properties,true);
+                }
+
+
+                errorMessege = String.Empty;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+
         #endregion
 
         #region Search Supplier
@@ -123,7 +244,20 @@ namespace SilverTip.Services
             }
             
         }
+
+        public Supplier GetSupplier(int supplierId)
+        {
+            try
+            {
+                return base.GetAll(x => x.Id == supplierId).FirstOrDefault();
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
+
 
         //#region Update Supplier Account Details
         //public void UpdateAccountDetails(Supplier entity, List<string> properties, bool isIncluded, out string errorMessege)

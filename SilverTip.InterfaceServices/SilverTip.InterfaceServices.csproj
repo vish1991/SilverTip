@@ -59,6 +59,7 @@
     <Compile Include="ILeafTypeService.cs" />
     <Compile Include="IPaymentTypeService.cs" />
     <Compile Include="IRouteService.cs" />
+    <Compile Include="ISupplierFundService.cs" />
     <Compile Include="ISupplierPaymentTypeService.cs" />
     <Compile Include="ISupplierService.cs" />
     <Compile Include="ISupplierTypeService.cs" />

@@ -10,24 +10,24 @@ using System.Threading.Tasks;
 
 namespace SilverTip.Services
 {
-    public class FundService : EntityService<Fund>, IFundService
+    public class SupplierFundService : EntityService<SupplierFund>, ISupplierFundService
     {
         #region Member Variables
 
         private readonly IUnitOfWork _unitOfWork;
-        private readonly IFundRepository _fundRepository;
+        private readonly ISupplierFundsRepository _supplierFundRepository;
 
         #endregion Member Variables
 
         #region Constructor
 
-        public FundService(IUnitOfWork unitOfWork, IFundRepository fundRepository)
-            : base(unitOfWork, fundRepository)
+        public SupplierFundService(IUnitOfWork unitOfWork, ISupplierFundsRepository supplierFundRepository)
+            : base(unitOfWork, supplierFundRepository)
         {
             try
             {
                 _unitOfWork = unitOfWork;
-                _fundRepository = fundRepository;
+                _supplierFundRepository = supplierFundRepository;
             }
             catch (Exception ex)
             {
@@ -37,11 +37,26 @@ namespace SilverTip.Services
         #endregion Constructor
 
         #region Get Routes List
-        public IEnumerable<Fund> GetFunds()
+        public IEnumerable<SupplierFund> GetSupplierFunds()
         {
             try
             {
-                return base.GetAll(o => o.IsActive == true).ToList();
+                return base.GetAll().ToList();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        #endregion
+
+        #region
+        public SupplierFund GetSupplierFunds(int supplierId)
+        {
+            try
+            {
+                return base.GetAll(x => x.Supplier.Id == supplierId).FirstOrDefault();
             }
             catch (Exception ex)
             {
@@ -49,20 +64,5 @@ namespace SilverTip.Services
             }
         }
         #endregion
-
-        #region Get Funds By Supplier Id
-        public Fund GetFundById(int supplierFundId)
-        {
-            try
-            {
-                return base.GetAll(x => x.Id == supplierFundId).FirstOrDefault();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-        #endregion
-
     }
 }

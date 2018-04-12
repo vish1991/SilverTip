@@ -7,10 +7,9 @@ using System.Threading.Tasks;
 
 namespace SilverTip.InterfaceServices
 {
-    public interface IFundService : IEntityService<Fund>
+    public interface ISupplierFundService : IEntityService<SupplierFund>
     {
-        IEnumerable<Fund> GetFunds();
-
-        Fund GetFundById(int supplierFundId);
+        IEnumerable<SupplierFund> GetSupplierFunds();
+        SupplierFund GetSupplierFunds(int supplierId);
     }
 }
