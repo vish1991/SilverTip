@@ -48,11 +48,10 @@ namespace SilverTip.Common.ViewModels
     }
     public class SupplierFundViewModel
     {
-        [Key]
-        public int id { get; set; }
+        public int supplierFundId { get; set; }
         public decimal fundAmount { get; set; }
         public FundModeViewModels fundModes { get; set; }
-        public FundModeViewModels fundNames { get; set; }
+        public FundViewModels fundNames { get; set; }
     }
     public class SupplierGridSearchCriteriaViewModel
     {
@@ -117,6 +116,7 @@ namespace SilverTip.Common.ViewModels
 
     public class UpdateSupplierFinancialDetailsViewModel
     {
+        public int id { get; set; }
         public string registrationNo { get; set; }
         public PaymentTypeViewModels paymentModes { get; set; }
         public string accountNumber { get; set; }

@@ -40,41 +40,45 @@ namespace SilverTip.API.Controllers
             {
                 SupplierFundViewModels supplierFundDetailsVM = new SupplierFundViewModels();
 
-                SupplierFund supplierFund = new SupplierFund();
-                supplierFund = _supplierFund.GetSupplierFunds(id);
+                IEnumerable<SupplierFund> supplierFunds = new List<SupplierFund>();
+                supplierFunds = _supplierFund.GetSupplierFunds(id);
 
                 Supplier supplier = new Supplier();
                 Fund fund = new Fund();
                 FundMode fundMode = new FundMode();
 
                 supplierFundDetailsVM.supplierFunds = new List<SupplierFundUpdateViewModel>();
-                if (supplierFund != null)
+                if (supplierFunds != null)
                 {
-                    SupplierFundUpdateViewModel supplierFundList = new SupplierFundUpdateViewModel();
-                    supplier = _supplier.GetSupplier(supplierFund.SupplierId);
-                    fund = _fund.GetFundById(supplierFund.FundId);
-                    fundMode = _fundMode.GetFundModeById(supplierFund.FundModeId);
+                    foreach (SupplierFund supplierFund in supplierFunds)
+                    {
+                        SupplierFundUpdateViewModel supplierFundList = new SupplierFundUpdateViewModel();
+                        supplier = _supplier.GetSupplier(supplierFund.SupplierId);
+                        fund = _fund.GetFundById(supplierFund.FundId);
+                        fundMode = _fundMode.GetFundModeById(supplierFund.FundModeId);
 
-                    supplierFundDetailsVM.supplierId = supplier.Id;
+                        supplierFundDetailsVM.supplierId = supplier.Id;
 
-                    supplierFundList.fundModes = new FundModeViewModels();
-                    supplierFundList.fundModes.id = fundMode.Id;
-                    supplierFundList.fundModes.name = fundMode.Name;
+                        supplierFundList.fundModes = new FundModeViewModels();
+                        supplierFundList.fundModes.id = fundMode.Id;
+                        supplierFundList.fundModes.name = fundMode.Name;
 
-                    supplierFundList.fundAmount = supplierFund.Amount;
+                        supplierFundList.fundAmount = supplierFund.Amount;
+                        supplierFundList.supplierFundId = supplierFund.Id;
 
-                    supplierFundList.fundNames = new FundModeViewModels();
-                    supplierFundList.fundNames.id = fundMode.Id;
-                    supplierFundList.fundNames.name = fund.Name;
+                        supplierFundList.fundNames = new FundViewModels();
+                        supplierFundList.fundNames.id = fund.Id;
+                        supplierFundList.fundNames.name = fund.Name;
 
-                    //supplierFundDetailsVM.supplier.id = supplierFund.SupplierId;
-                    //supplierFundDetailsVM.amount = supplierFund.Amount;
-                    //supplierFundDetailsVM.fundModes.id = supplierFund.FundModeId;
-                    //supplierFundDetailsVM.fundModes.name = supplierFund.FundMode.Name;
-                    //supplierFundDetailsVM.funds = new FundViewModel();
-                    //supplierFundDetailsVM.funds.id = _fund.GetFunds().Where(x=>x.Id == supplierFund.FundId).FirstOrDefault().Id;
-                    //supplierFundDetailsVM.funds.name = supplierFund.Fund.Name;
-                    supplierFundDetailsVM.supplierFunds.Add(supplierFundList);
+                        //supplierFundDetailsVM.supplier.id = supplierFund.SupplierId;
+                        //supplierFundDetailsVM.amount = supplierFund.Amount;
+                        //supplierFundDetailsVM.fundModes.id = supplierFund.FundModeId;
+                        //supplierFundDetailsVM.fundModes.name = supplierFund.FundMode.Name;
+                        //supplierFundDetailsVM.funds = new FundViewModel();
+                        //supplierFundDetailsVM.funds.id = _fund.GetFunds().Where(x=>x.Id == supplierFund.FundId).FirstOrDefault().Id;
+                        //supplierFundDetailsVM.funds.name = supplierFund.Fund.Name;
+                        supplierFundDetailsVM.supplierFunds.Add(supplierFundList);
+                    }
                 }
                 var messageData = new { code = ReadOnlyValue.SuccessMessageCode, message = ReadOnlyValue.MessageSuccess };
                 var returnObject = new { supplierFundDetailsVM = supplierFundDetailsVM, messageCode = messageData };
@@ -91,7 +95,7 @@ namespace SilverTip.API.Controllers
 
 
         [HttpGet]
-        public IHttpActionResult GetAllFunds()
+        public IHttpActionResult GetAllSupplierFunds()
         {
             try
             {
@@ -109,6 +113,7 @@ namespace SilverTip.API.Controllers
                     fundVM.fundAmount = supplierFund.Amount;
                     fundVM.fundModes.name = supplierFund.FundMode.Name;
                     fundVM.fundNames.name = supplierFund.Fund.Name;
+                    //fundVM.supplierFundId = supplierFund.Id;
 
                 }
                 var messageData = new { code = ReadOnlyValue.SuccessMessageCode, message = ReadOnlyValue.MessageSuccess };

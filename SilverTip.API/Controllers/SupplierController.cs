@@ -230,7 +230,11 @@ namespace SilverTip.API.Controllers
                 if (ModelState.IsValid)
                 {
                     List<string> properties = new List<string>();
-                    
+                    properties.Add("AccountNumber");
+                    properties.Add("AccountName");
+                    properties.Add("Branch");
+                    properties.Add("BankId");
+                    properties.Add("PaymentTypeId");
                     _supplier.UpdateSupplierFinanceDetails(supplier, properties, true, out errorMessege);
                 }
                 else

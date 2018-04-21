@@ -13,10 +13,8 @@ namespace SilverTip.Common.ViewModels
     {
         [Key]
         public int id { get; set; }
-        [Required]
         [MaxLength(100)]
         public string code { get; set; }
-        [Required]
         [MaxLength(200)]
         public string name { get; set; }
         public int bankId { get; set; }

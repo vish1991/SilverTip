@@ -52,11 +52,11 @@ namespace SilverTip.Services
         #endregion
 
         #region
-        public SupplierFund GetSupplierFunds(int supplierId)
+        public IEnumerable<SupplierFund> GetSupplierFunds(int supplierId)
         {
             try
             {
-                return base.GetAll(x => x.Supplier.Id == supplierId).FirstOrDefault();
+                return base.GetAll(x => x.Supplier.Id == supplierId).ToList();
             }
             catch (Exception ex)
             {

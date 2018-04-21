@@ -120,7 +120,7 @@ namespace SilverTip.Services
                         supplier.CreatedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
                         supplier.CreatedBy = "admin";//User.Identity.Name;
                         supplier.ModifiedBy = "admin";
-                        supplier.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"])); ;
+                        supplier.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
 
                         base.Update(supplier, properties, isIncluded);
 
@@ -163,57 +163,82 @@ namespace SilverTip.Services
         {
             try
             {
-                Supplier supplier = new Supplier();
-                supplier = _supplierRepository.Get(x => x.RegNo == entity.registrationNo).FirstOrDefault();
-
-                SupplierPaymentType supplierPaymentType = new SupplierPaymentType();
-                supplierPaymentType = supplier.SupplierPaymentTypes.Where(x=>x.Id == entity.paymentModes.id).FirstOrDefault();
-
-                supplierPaymentType.AccountNumber = entity.accountNumber;
-                supplierPaymentType.AccountName = entity.accountName;
-                supplierPaymentType.Branch = entity.branch;
-
-                _supplierPaymentTypeRepository.Update(supplierPaymentType, properties, true);
-
-                properties.Clear();
-                properties.Add("Name");
-
-                PaymentType paymentType = new PaymentType();
-                paymentType.Name = entity.paymentModes.name;
-
-                _supplierPaymentTypeRepository.Update(supplierPaymentType, properties, true);
-
-                properties.Clear();
-                properties.Add("Name");
-
-                Bank bank = new Bank();
-                bank.Name = entity.banks.name;
-
-                _bankRepository.Update(bank, properties, true);
-
-                properties.Clear();
-                properties.Add("FundModeId");
-                properties.Add("FundId");
-                properties.Add("Amount");
-
-                foreach (SupplierFundViewModel item in entity.supplierFunds)
+                using (var dbContextTransaction = _supplierPaymentTypeRepository.DbContext.Database.BeginTransaction())
                 {
-                    SupplierFund supplierFund = new SupplierFund();
-                    supplierFund = _supplierFundsRepository.Get(x=>x.Id == item.fundModes.id).FirstOrDefault();
-                    supplierFund.FundModeId = item.fundModes.id;
-                    supplierFund.FundId = item.fundNames.id;
-                    supplierFund.Amount = item.fundAmount;
+                    try
+                    {
+                        //Supplier supplier = new Supplier();
+                        //supplier = _supplierRepository.Get(x => x.Id == entity.id).FirstOrDefault();
 
-                    _supplierFundsRepository.Update(supplierFund,properties,true);
+                        SupplierPaymentType supplierPaymentType = new SupplierPaymentType();
+                        supplierPaymentType = _supplierPaymentTypeRepository.Get(o => o.SupplierId == entity.id).FirstOrDefault();// supplier.SupplierPaymentTypes.Where(x => x.SupplierId == entity.id).FirstOrDefault();
+
+                        supplierPaymentType.AccountNumber = entity.accountNumber;
+                        supplierPaymentType.AccountName = entity.accountName;
+                        supplierPaymentType.Branch = entity.branch;
+                        supplierPaymentType.BankId = entity.banks.id;
+                        supplierPaymentType.PaymentTypeId = entity.paymentModes.id;
+
+                        _supplierPaymentTypeRepository.Update(supplierPaymentType, properties, true);
+
+
+                        properties.Clear();
+                        properties.Add("FundModeId");
+                        properties.Add("FundId");
+                        properties.Add("Amount");
+                        properties.Add("ModifiedDate");
+                        properties.Add("ModifiedBy");
+
+                        foreach (SupplierFundViewModel item in entity.supplierFunds)
+                        {
+                            if (item.supplierFundId != 0) //make this !=0 after sending the supplierFundId from the front end
+                            {
+
+                                SupplierFund supplierFund = new SupplierFund();
+                                supplierFund = _supplierFundsRepository.Get(x => x.Id == item.supplierFundId).FirstOrDefault(); // 28 should be item.id -- and SupplierFundViewModel's id should be the supplierFundId
+                                supplierFund.FundModeId = item.fundModes.id;
+                                supplierFund.FundId = item.fundNames.id;
+                                supplierFund.Amount = item.fundAmount;
+                                supplierFund.CreatedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
+                                supplierFund.CreatedBy = "admin";//User.Identity.Name;
+                                supplierFund.ModifiedBy = "admin";
+                                supplierFund.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
+
+                                _supplierFundsRepository.Update(supplierFund, properties, true);
+                            }
+                            else
+                            {
+
+                                SupplierFund supplierFund = new SupplierFund();
+                                supplierFund.FundModeId = item.fundModes.id;
+                                supplierFund.FundId = item.fundNames.id;
+                                supplierFund.Amount = item.fundAmount;
+                                supplierFund.SupplierId = entity.id;
+                                supplierFund.CreatedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
+                                supplierFund.CreatedBy = "admin";//User.Identity.Name;
+                                supplierFund.ModifiedBy = "admin";
+                                supplierFund.ModifiedDate = TimeZoneInfo.ConvertTime(DateTime.Now, TimeZoneInfo.FindSystemTimeZoneById(ConfigurationManager.AppSettings["LocalTimeZone"]));
+
+                                _supplierFundsRepository.Add(supplierFund);
+                            }
+                        }
+                        errorMessege = String.Empty;
+                        _unitOfWork.Commit();
+                        dbContextTransaction.Commit();
+                    }
+                    catch (Exception ex)
+                    {
+                        dbContextTransaction.Rollback();
+                        throw ex;
+                    }
                 }
-
-
                 errorMessege = String.Empty;
             }
             catch(Exception ex)
             {
                 throw ex;
             }
+            
         }
 
 

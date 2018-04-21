@@ -10,6 +10,6 @@ namespace SilverTip.InterfaceServices
     public interface ISupplierFundService : IEntityService<SupplierFund>
     {
         IEnumerable<SupplierFund> GetSupplierFunds();
-        SupplierFund GetSupplierFunds(int supplierId);
+        IEnumerable<SupplierFund> GetSupplierFunds(int supplierId);
     }
 }

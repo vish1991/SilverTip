@@ -51,8 +51,8 @@ E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\bin\Debug\EntityF
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\bin\Debug\EntityFramework.SqlServer.dll
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\bin\Debug\EntityFramework.xml
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\bin\Debug\EntityFramework.SqlServer.xml
+E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csprojResolveAssemblyReference.cache
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.Migrations.InitiateDatabase.resources
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csproj.GenerateResource.Cache
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.dll
 E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.pdb
-E:\Allion Technologies\SilverTipAPI\SilverTip.BusinessEntities\obj\Debug\SilverTip.BusinessEntities.csprojResolveAssemblyReference.cache
